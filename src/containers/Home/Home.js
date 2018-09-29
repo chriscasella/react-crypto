@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
+import CryptoListContainer from './CryptoListContainer/CryptoListContainer';
 
 class Home extends Component {
     constructor(){
@@ -10,6 +11,7 @@ class Home extends Component {
         return(
         <div>
             {/* <Nav /> */}
+            <CryptoListContainer></CryptoListContainer>
         </div>
         )
     };

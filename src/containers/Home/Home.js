@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import CryptoListContainer from './CryptoListContainer/CryptoListContainer';
+import axios from 'axios';
 
 class Home extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+        this.state = {
+            marketData : null
+        }
+    };
+
+    consoleThis = () => {
+        console.log(process.env.REACT_APP_API);
+    }
+
+    getMarketData = () =>{
+        axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=5000&convert=USD&CMC_PRO_API_KEY=' + process.env.REACT_APP_API)
+        .then( res => {
+            const marketData = res.data;
+            this.setState({ marketData: marketData});
+            console.log(this.state.marketData)
+
+        })
+    };
+
+    componentDidMount(){
+        this.getMarketData();
     };
     /*
     TODO:

@@ -6,12 +6,18 @@ class Home extends Component {
     constructor(){
         super();
     };
+    /*
+    TODO:
+        install axios and import.
 
+        make http call to api and get the list of currencies.
+        save in state as list and pass as props to CryptoListContainer
+    */ 
     render(){
         return(
         <div>
             {/* <Nav /> */}
-            <CryptoListContainer></CryptoListContainer>
+            <CryptoListContainer />
         </div>
         )
     };

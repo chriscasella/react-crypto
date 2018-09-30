@@ -30,7 +30,7 @@ class CryptoListContainer extends Component {
     render(){
 
         let cryptoListData = this.state.marketData.map( ele =>{
-            return <CryptoListItem name={ele.name} key={ele.id} />
+            return <CryptoListItem coinData={ele} key={ele.id} />
         });
         
         return(

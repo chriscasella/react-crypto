@@ -1,9 +1,10 @@
 import React from 'react';
 
 const CryptoListItem = (props) => {
+    const coin = props.coinData;
     return(
         <div>
-            {props.name}
+            {coin.name}
         </div>
     )
 }

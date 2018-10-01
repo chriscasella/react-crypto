@@ -1,28 +1,71 @@
-.App {
-  text-align: center;
+  .crpyto-container {
+    max-height: 80vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .crypto-container__item {
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
+  }
+
+  .crypto-container__item-right {
+    float: right;
+  }
+
+  .crypto-container__item-middle {
+    margin-left: 18vw;
+  }
+
+  .bold-text {
+    font-weight: bold;
+    padding: 2vw;
+  }
+
+
+
+//iPad size
+@media only screen and (max-width: 768px){
+  .crpyto-container{
+    max-height: 80vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .crypto-container__item{
+
+  }
+}
+//iPhone 6/7/8
+@media only screen and (max-width: 375px){
+  .crpyto-container{
+    display: flex;
+    flex-flow: column;
+    max-height: 80vh;
+    overflow-x: hidden;
+  }
+
+  .crypto-container__item{
+
+  }
+}
+//iPhone 5
+@media only screen and (max-width: 320px){
+  .crpyto-container{
+    max-height: 80vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .crypto-container__item{
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+*{
+  box-sizing: border-box;
 }

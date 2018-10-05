@@ -1,4 +1,4 @@
-  .crpyto-container {
+  /* .crpyto-container {
     max-height: 80vh;
     overflow-x: hidden;
     display: flex;
@@ -8,24 +8,49 @@
   .crypto-container__item {
     padding: 5px;
     border-bottom: solid 1px #354F52;
-  }
 
-  .crypto-container__item-right {
-    float: right;
-  }
-
-  .crypto-container__item-middle {
-    margin-left: 18vw;
-  }
   .crypto-container__item-desktop {
     margin-left: 18vw;
   }
+*/
+  
 
+  .crypto-container__item-right {
+    float: right;
+    padding: 0px 10px;
+  }
+  .crypto-container__item-middle {
+    padding: 0px 10px;
+  }
   .bold-text {
     font-weight: bold;
-    padding: 2vw;
+    padding: 0px 2vw;
+  } 
+
+  .small-text {
+    font-size: 4px;
+  }
+  .crpyto-container{
+    max-height: 80vh;
+    overflow-x: hidden;
+  }
+  
+  .crypto-container__item{
+    display: flex;
+    align-content:space-evenly;
+    flex-direction: row;
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
   }
 
+  .crypto-container__item:nth-child(odd) {
+    display: flex;
+    align-content:space-evenly;
+    flex-direction: row;
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
+    background: #CAD2C5;
+  }
 
 //iPad size
 @media only screen and (max-width: 768px){

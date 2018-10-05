@@ -52,6 +52,13 @@
     background: #CAD2C5;
   }
 
+  .positiveColor {
+    color: green;
+  }
+
+  .negativeColor {
+    color: red;
+  }
 //iPad size
 @media only screen and (max-width: 768px){
   .crpyto-container{

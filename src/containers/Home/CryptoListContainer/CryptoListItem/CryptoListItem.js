@@ -7,6 +7,14 @@ const CryptoListItem = (props) => {
     const roundDown = (num) =>{
         return Math.floor(num * 1000)/1000;
     }
+
+    const percentChangeDiff = num => num > 0 ? "positiveColor" : "negativeColor" ;
+    // const positiveColor = {
+    //     color: 'green'
+    // }
+    // const negativeColor = {
+    //     color: 'red'
+    // }
     return(
         <div className="crypto-container__item">
             {coin.cmc_rank}
@@ -21,7 +29,7 @@ const CryptoListItem = (props) => {
                 <span className="crypto-container__item-desktop">{roundDown(coin.quote.USD.percent_change_7d)}</span>
             </MediaQuery>
             <span className="crypto-container__item-middle">%24hr</span>
-            <span className="crypto-container__item-right">{roundDown(coin.quote.USD.percent_change_24h)}</span>
+            <span className={percentChangeDiff(coin.quote.USD.percent_change_24h), "crypto-container__item-right"}>{roundDown(coin.quote.USD.percent_change_24h)}</span>
         </div>
     )
 }

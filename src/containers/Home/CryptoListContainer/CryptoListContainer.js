@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CryptoListItem from './CryptoListItem/CryptoListItem';
 import axios from 'axios';
+import './CryptoListContainer.css';
 
 class CryptoListContainer extends Component {
 
@@ -35,7 +36,7 @@ class CryptoListContainer extends Component {
         
         return(
             <div className="crpyto-container">
-            {cryptoListData}
+                {cryptoListData}
             </div>
         );
     };

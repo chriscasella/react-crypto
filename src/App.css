@@ -17,12 +17,14 @@
   .crypto-container__item-middle {
     margin-left: 18vw;
   }
+  .crypto-container__item-desktop {
+    margin-left: 18vw;
+  }
 
   .bold-text {
     font-weight: bold;
     padding: 2vw;
   }
-
 
 
 //iPad size
@@ -37,6 +39,10 @@
   .crypto-container__item{
 
   }
+
+  .crypto-container__item-desktop {
+    display: none;
+  }
 }
 //iPhone 6/7/8
 @media only screen and (max-width: 375px){
@@ -47,6 +53,9 @@
     overflow-x: hidden;
   }
 
+  .crypto-container__item-desktop {
+    display: none;
+  }
   .crypto-container__item{
 
   }
@@ -56,15 +65,20 @@
   .crpyto-container{
     max-height: 80vh;
     overflow-x: hidden;
-    display: flex;
+    display: none;
     flex-flow: column;
   }
 
+  .crypto-container__item-desktop {
+    display: none;
+  }
+  
   .crypto-container__item{
     padding: 5px;
     border-bottom: solid 1px #354F52;
   }
 }
+
 
 *{
   box-sizing: border-box;

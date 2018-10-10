@@ -7,7 +7,7 @@ const CryptoListItem = (props) => {
     const roundDown = (num) =>{
         const twoDecimalPlaces = Math.floor(num * 100)/100;
         const threeDecimalPlaces = Math.floor(num * 1000)/1000;
-
+        //was used for crypto prices to scale on front end display
         if(twoDecimalPlaces < 1){
             return threeDecimalPlaces;
         }
@@ -15,17 +15,11 @@ const CryptoListItem = (props) => {
     }
 
     const percentChangeDiff = num => num > 0 ? "positiveColor" : "negativeColor" ;
-    // const positiveColor = {
-    //     color: 'green'
-    // }
-    // const negativeColor = {
-    //     color: 'red'
-    // }
     return(
         <tr>
             <td>{coin.cmc_rank}</td>
             <td>{coin.name}</td>
-            <td className="bold-text">{coin.symbol}</td>
+            <td className="crypto-list-item__bold-text">{coin.symbol}</td>
             <td>$ {roundDown(coin.quote.USD.price)}</td>
             {/* Desktop Stats */}
             <MediaQuery minDeviceWidth={1024}>

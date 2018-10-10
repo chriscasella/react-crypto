@@ -1,6 +1,7 @@
 
-  .bold-text {
+  .crypto-list-item__bold-text {
     font-weight: 400;
+    font-size: 14px;
   } 
   td {
     text-align: center;

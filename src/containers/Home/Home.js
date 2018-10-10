@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import CryptoListContainer from './CryptoListContainer/CryptoListContainer';
+import NewsContainer from '../../components/NewsContainer/NewsContainer';
 import axios from 'axios';
 
 class Home extends Component {
@@ -26,6 +27,7 @@ class Home extends Component {
         <div>
             {/* <Nav /> */}
             <CryptoListContainer />
+            <NewsContainer />
         </div>
         )
     };

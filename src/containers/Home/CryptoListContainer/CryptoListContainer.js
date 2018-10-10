@@ -37,34 +37,36 @@ class CryptoListContainer extends Component {
         
         return(
             <table className="crpyto-container">
-                <tr>
-                    <th>
-                        Rank
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Symbol
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                    <MediaQuery minDeviceWidth={1024}>
-                    <th>
-                        ±1hr
-                    </th>
-                    <th>
-                        ±1Wk
-                    </th>
-                    </MediaQuery>
-                    <th>
-                        ±24hr
-                    </th>
-                </tr>
-                
+                <thead>
+                    <tr>
+                        <th>
+                            Rank
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Symbol
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <MediaQuery minDeviceWidth={1024}>
+                        <th>
+                            ±1hr
+                        </th>
+                        <th>
+                            ±1Wk
+                        </th>
+                        </MediaQuery>
+                        <th>
+                            ±24hr
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                 {cryptoListData}
-                
+                </tbody>
             </table>
         );
     };

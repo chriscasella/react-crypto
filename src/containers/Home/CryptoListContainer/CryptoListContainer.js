@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CryptoListItem from './CryptoListItem/CryptoListItem';
 import axios from 'axios';
 import './CryptoListContainer.css';
+import MediaQuery from 'react-responsive';
 
 class CryptoListContainer extends Component {
 
@@ -35,9 +36,36 @@ class CryptoListContainer extends Component {
         });
         
         return(
-            <div className="crpyto-container">
+            <table className="crpyto-container">
+                <tr>
+                    <th>
+                        Rank
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Symbol
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <MediaQuery minDeviceWidth={1024}>
+                    <th>
+                        ±1hr
+                    </th>
+                    <th>
+                        ±1Wk
+                    </th>
+                    </MediaQuery>
+                    <th>
+                        ±24hr
+                    </th>
+                </tr>
+                
                 {cryptoListData}
-            </div>
+                
+            </table>
         );
     };
 };

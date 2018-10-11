@@ -1,28 +1,129 @@
-.App {
-  text-align: center;
+
+  .crypto-list-item__bold-text {
+    font-weight: 400;
+    font-size: 14px;
+  } 
+  td {
+    text-align: center;
+  }
+  .small-text {
+    font-size: .75em;
+  }
+  .NewsContainerItem__coin-badge {
+    display: inline-block;
+    background-color: darkgrey;
+    padding: .5vw .5vh;
+    margin: 0px 1vw;
+    border-radius: 5px;
+  }
+  .crpyto-container{
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  .crypto-container__header{
+    color: #CAD2C5;
+    border-bottom: 1px solid lightgrey;
+  }
+  .crypto-container__item{
+    display: flex;
+    align-content:space-evenly;
+    flex-direction: row;
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
+  }
+
+  tr:nth-child(even) {
+    background: #CAD2C5;
+  }
+
+  .positiveColor {
+    color: green;
+  }
+
+  .negativeColor {
+    color: red;
+  }
+
+  .NewsContainerItem {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    border: solid 1px black;
+    border-radius: 0%;
+    padding: 2vh 2vw .5vh 2vw;
+    margin: 1vh 1vw;
+    background-color: whitesmoke;
+    border-bottom: 7px solid #354F52;
+  }
+  .NewsContainerItem:hover {
+    border: solid 1px black;
+    border-radius: 0%;
+    padding: 2vh 2vw;
+    margin: 1vh 1vw;
+    box-shadow: none;
+  }
+  .NewsContainerItem__thumbnail {
+    width: 10vw;
+    display: inline-block;
+  }
+
+  .NewsContainerItem__text-block {
+    display: inline-block;
+    width: 80vw;
+    padding: 0px 2vw;
+  }
+//iPad size
+@media only screen and (max-width: 768px){
+  .crpyto-container{
+    max-height: 80vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .crypto-container__item{
+
+  }
+
+  .crypto-container__item-desktop {
+    display: none;
+  }
+}
+//iPhone 6/7/8
+@media only screen and (max-width: 375px){
+  .crpyto-container{
+    display: flex;
+    flex-flow: column;
+    max-height: 80vh;
+    overflow-x: hidden;
+  }
+
+  .crypto-container__item-desktop {
+    display: none;
+  }
+  .crypto-container__item{
+
+  }
+}
+//iPhone 5
+@media only screen and (max-width: 320px){
+  .crpyto-container{
+    max-height: 80vh;
+    overflow-x: hidden;
+    display: none;
+    flex-flow: column;
+  }
+
+  .crypto-container__item-desktop {
+    display: none;
+  }
+  
+  .crypto-container__item{
+    padding: 5px;
+    border-bottom: solid 1px #354F52;
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+*{
+  box-sizing: border-box;
 }

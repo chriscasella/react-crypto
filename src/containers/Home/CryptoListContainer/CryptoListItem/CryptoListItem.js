@@ -1,6 +1,6 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
-
+import { BrowserRouter as Router, Route, Link  } from 'react-router-dom';
 
 const CryptoListItem = (props) => {
     const coin = props.coinData;
@@ -18,8 +18,10 @@ const CryptoListItem = (props) => {
     return(
         <tr>
             <td>{coin.cmc_rank}</td>
-            <td>{coin.name}</td>
+            
+            <td><Link to={"/" + coin.symbol}>{coin.name}</Link></td>
             <td className="crypto-list-item__bold-text">{coin.symbol}</td>
+          
             <td>$ {roundDown(coin.quote.USD.price)}</td>
             {/* Desktop Stats */}
             <MediaQuery minDeviceWidth={1024}>

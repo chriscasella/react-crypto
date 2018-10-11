@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './containers/Home/Home';
+import Coin from './containers/Coin/Coin';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Route route="/" component={Home} />
-      </div>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/:coin" exact component={Coin} />
+      </Switch>
     );
   }
 }

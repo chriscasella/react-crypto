@@ -3,6 +3,7 @@ import CryptoListItem from './CryptoListItem/CryptoListItem';
 import axios from 'axios';
 import './CryptoListContainer.css';
 import MediaQuery from 'react-responsive';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class CryptoListContainer extends Component {
 
@@ -31,9 +32,12 @@ class CryptoListContainer extends Component {
 
     render(){
 
-        let cryptoListData = this.state.marketData.map( ele =>{
-            return <CryptoListItem className="" coinData={ele} key={ele.id} />
-        });
+        let cryptoListData = this.state.marketData.map( ele => (
+
+                <CryptoListItem className="" coinData={ele} key={ele.id} />
+  
+            )
+        );
         
         return(
             <table className="crpyto-container">

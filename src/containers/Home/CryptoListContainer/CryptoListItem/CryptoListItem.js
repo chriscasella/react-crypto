@@ -19,7 +19,7 @@ const CryptoListItem = (props) => {
         <tr>
             <td>{coin.cmc_rank}</td>
             
-            <td><Link to={"/" + coin.symbol}>{coin.name}</Link></td>
+            <td className="crypto-list-item__link"><Link to={"/" + coin.symbol} style={{textDecoration: 'none'}}>{coin.name}</Link></td>
             <td className="crypto-list-item__bold-text">{coin.symbol}</td>
           
             <td>$ {roundDown(coin.quote.USD.price)}</td>

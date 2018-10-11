@@ -3,6 +3,10 @@
     font-weight: 400;
     font-size: 14px;
   } 
+
+  .crypto-list-item__link{
+    text-decoration: none;
+  }
   td {
     text-align: center;
   }

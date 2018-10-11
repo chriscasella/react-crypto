@@ -27,9 +27,9 @@ class NewsContainer extends Component {
 
     render(){
 
-        let newsData = this.state.news.map(ele =>{
-            return <NewsContainerItem key={ele.id} article={ele} />
-        });
+        let newsData = this.state.news.map((ele) =>
+            <NewsContainerItem key={ele._id} article={ele} />
+        );
 
         return(
             <div>

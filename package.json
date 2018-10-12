@@ -5,7 +5,10 @@
   "dependencies": {
     "apexcharts": "^2.1.4",
     "axios": "^0.18.0",
+    "halogen": "^0.2.0",
+    "halogenium": "^2.2.3",
     "react": "^16.5.2",
+    "react-apexcharts": "^1.0.9",
     "react-dom": "^16.5.2",
     "react-responsive": "^5.0.0",
     "react-router-dom": "^4.3.1",

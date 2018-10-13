@@ -9,20 +9,39 @@ class CoinChart extends Component {
         this.state = {
             coinSymbol : props.coinSymbol,
             options: {
-                chart: {
-                    type : 'area'
+                dataLabels: {
+                    enabled: false
+                },
+                theme: {
+                    palette: 'palette8', 
+                    monochrome: {
+                        enabled: false,
+                        color: '#255aee',
+                        shadeTo: 'light',
+                        shadeIntensity: 0.65
+                    },
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: []
+                 },
+                tooltip: {
+                    x: {
+                        format: 'MM/dd/yy HH:mms'
+                    }
                 }
+            },
+            legend: {
+                show: true,
+                position: 'top',
+                horizontalAlign: 'left'
             },
             series: [
                 {
                     name: null,
                     data: []
                 }
-            ],
-            xaxis: {
-                type: 'datetime'
-            },
-            labels: [] 
+            ]
         }
     }
 
@@ -42,20 +61,26 @@ class CoinChart extends Component {
         const dates = [];
         const close = [];
         const parsedData = data.forEach( el => {
-           const newDate = new Date(el.time * 1000);
+            const newDate = new Date(el.time * 1000).toString();
             dates.push(newDate);
             close.push(el.close);
 
         });
-        //console.log(dates, close);
+        // console.log(dates, close);
         //vars for setting nested  state
         const series = [...this.state.series];
-        const labels = {...this.state.options};
+        const options = {
+            ...this.state.options
+
+        }
         series[0].name = 'Close';
+        //spread operator for array of el.close data
         series[0].data =[...close];
-        labels.labels = dates;
-        console.log(series, labels)
-        this.setState({ series, labels });
+        //targeting nested object from spread of this.state.options
+        options.xaxis.categories = [...dates];
+        // console.log(series, categories)
+        this.setState({ series, options});
+        console.log(this.state)
     };
 
     //LifeCycle Hooks
@@ -69,7 +94,7 @@ class CoinChart extends Component {
                 Inside CoinChart!
                 {
                     this.state.series[0].data.length > 0 ? 
-                    <Chart options={this.state.options} series={this.state.series} type="area" width={500} height={320} /> :
+                    <Chart options={this.state.options} series={this.state.series} type="area" bwidth={500} height={320} /> :
                     <BounceLoader color="#26A65B" size="16px" margin="4px" /> 
                 }
             </div>

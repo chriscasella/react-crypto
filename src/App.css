@@ -17,6 +17,9 @@
     font-size: 20px;
     padding: 0px 2vw;
   }
+  .coinstats__header {
+    color: #1589EE;
+  }
 
 /* Crypto Container */
   .crypto-list-item__bold-text {
@@ -52,7 +55,7 @@
   }
 
   tr:nth-child(even) {
-    background: #CAD2C5;
+    background: #3e66808c;
   }
 
   .positiveColor {
@@ -70,7 +73,7 @@
     padding: 2vh 2vw .5vh 2vw;
     margin: 1vh 1vw;
     background-color: whitesmoke;
-    border-bottom: 7px solid #354F52;
+    border-bottom: 7px solid #00487C;
   }
   .NewsContainerItem:hover {
     border: solid 1px black;

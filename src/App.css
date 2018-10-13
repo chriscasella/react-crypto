@@ -1,4 +1,24 @@
+/* Coin Stats */
 
+  .coinstats__main {
+
+  }
+  .coinstats__main-row {
+    border-bottom: .5px solid lightgrey;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: space-evenly;
+    padding: 0px 2vw;
+    justify-content: center;
+  }
+
+  .coinstats__price {
+    font-size: 20px;
+    padding: 0px 2vw;
+  }
+
+/* Crypto Container */
   .crypto-list-item__bold-text {
     font-weight: 400;
     font-size: 14px;
@@ -13,13 +33,7 @@
   .small-text {
     font-size: .75em;
   }
-  .NewsContainerItem__coin-badge {
-    display: inline-block;
-    background-color: darkgrey;
-    padding: .5vw .5vh;
-    margin: 0px 1vw;
-    border-radius: 5px;
-  }
+  
   .crpyto-container{
     border-collapse: collapse;
     width: 100%;
@@ -48,7 +62,7 @@
   .negativeColor {
     color: red;
   }
-
+/* News Container */
   .NewsContainerItem {
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
     border: solid 1px black;
@@ -75,6 +89,16 @@
     width: 80vw;
     padding: 0px 2vw;
   }
+
+  .NewsContainerItem__coin-badge {
+    display: inline-block;
+    background-color: darkgrey;
+    padding: .5vw .5vh;
+    margin: 0px 1vw;
+    border-radius: 5px;
+  }
+
+
 //iPad size
 @media only screen and (max-width: 768px){
   .crpyto-container{

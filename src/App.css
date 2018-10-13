@@ -17,6 +17,11 @@
     font-size: 20px;
     padding: 0px 2vw;
   }
+
+  .coinstats__row-item {
+    font-size: 14px;
+    padding: 0px 2vw;
+  }
   .coinstats__header {
     color: #1589EE;
   }

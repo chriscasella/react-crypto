@@ -2,7 +2,7 @@ import React from 'react';
 
 const CoinHeader = (props) => {
     const c = props.coinStats;
-    console.log(c);
+    // console.log(c);
     return (
         <div className="coinstats__main">
             <div className="coinstats__main-row">

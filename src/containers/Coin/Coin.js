@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import CoinChart from '../../components/CoinChart/CoinChart';
 import CoinHeader from './CoinHeader/CoinHeader';
+import CoinStats from './CoinStats/CoinStats';
 import { ScaleLoader } from 'halogenium';
 
 class Coin extends Component {
@@ -43,7 +44,13 @@ class Coin extends Component {
             }
             {
                 this.state.dataLoaded ? 
+                
                 <CoinChart coinSymbol={this.state.coinSymbol} /> : 
+                <ScaleLoader color="#26A65B" size="16px" margin="4px"/> 
+            }
+            {
+                this.state.dataLoaded ? 
+                <CoinStats coinStats={this.state.coinStats} /> :
                 <ScaleLoader color="#26A65B" size="16px" margin="4px"/> 
             }
             </div>

@@ -60,10 +60,15 @@ class CoinChart extends Component {
         console.log('got data', data)
         const dates = [];
         const close = [];
+        const high = [];
+        const low = [];
+
         const parsedData = data.forEach( el => {
             const newDate = new Date(el.time * 1000).toString();
             dates.push(newDate);
             close.push(el.close);
+            high.push(el.high);
+            low.push(el.low);
 
         });
         // console.log(dates, close);
@@ -76,6 +81,8 @@ class CoinChart extends Component {
         series[0].name = 'Close';
         //spread operator for array of el.close data
         series[0].data =[...close];
+        series.push({name: 'High', data: high});
+        series.push({name: 'Low', data: low});
         //targeting nested object from spread of this.state.options
         options.xaxis.categories = [...dates];
         // console.log(series, categories)
@@ -91,10 +98,9 @@ class CoinChart extends Component {
     render(){
         return(
             <div>
-                Inside CoinChart!
                 {
                     this.state.series[0].data.length > 0 ? 
-                    <Chart options={this.state.options} series={this.state.series} type="area" bwidth={500} height={320} /> :
+                    <Chart options={this.state.options} series={this.state.series} type="area"  height={320} /> :
                     <BounceLoader color="#26A65B" size="16px" margin="4px" /> 
                 }
             </div>

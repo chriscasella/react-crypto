@@ -11,6 +11,7 @@ const CoinStats = (props) => {
         x = x.toFixed(2);
      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+    const calcSupply = (supply, total) => supply/total;
     return(
         <div className="coinstats__main">
             <section className="coinstats__main-row">
@@ -31,8 +32,14 @@ const CoinStats = (props) => {
                 <p className="coinstats__row-item"> {normalizeNum(c.circulating_supply)} </p>
             </section>
             <section className="coinstats__main-row">
+                <p className="coinstats__row-item"> Circ % Total Supply </p>
+                <p className="coinstats__row-item"> {calcSupply(c.circulating_supply, c.total_supply)} </p>
+                <MediaQuery minDeviceWidth={1024}>
+                <p className="coinstats__row-item"> Circ % Max Supply </p>
+                <p className="coinstats__row-item"> {calcSupply(c.circulating_supply, c.max_supply)} </p>
                 <p className="coinstats__row-item"> Total Supply </p>
                 <p className="coinstats__row-item"> {normalizeNum(c.total_supply)} </p>
+                </MediaQuery>
                 <p className="coinstats__row-item"> Max Supply </p>
                 <p className="coinstats__row-item"> {normalizeNum(c.max_supply)} </p>
             </section>

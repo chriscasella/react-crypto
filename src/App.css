@@ -1,5 +1,9 @@
 /* Coin Stats */
-
+  .coin-nav {
+    height: 5vh;
+    border-bottom: 4px #A7CCED solid;
+    background-color: #545E75;
+  }
   .coinstats__main {
 
   }

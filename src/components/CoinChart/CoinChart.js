@@ -29,6 +29,17 @@ class CoinChart extends Component {
                     x: {
                         format: 'MM/dd/yy HH:mms'
                     }
+                },
+                annotations : {
+                    fill: {
+                        type: 'gradient',
+                        gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.9,
+                        stops: [0, 100]
+                        }
+                    }
                 }
             },
             legend: {

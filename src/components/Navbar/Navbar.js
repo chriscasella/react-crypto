@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar/SearchBar';
+import axios from 'axios';
 
 class Navbar extends Component {
     constructor(){
         super();
         this.state = {
-            data: null
+            coinList: []
         }
     };
+
+    componentDidMount(){
+        this.getCoinList();
+    };
+
+    getCoinList = () => {
+        axios.get('https://min-api.cryptocompare.com/data/all/coinlist')
+        .then( res => {
+            console.log('coin list!', res);
+        });
+    }
+
     render(){
         return(
             <nav className="coin-nav">

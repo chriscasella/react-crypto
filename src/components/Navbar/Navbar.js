@@ -6,7 +6,7 @@ class Navbar extends Component {
     constructor(){
         super();
         this.state = {
-            coinList: []
+            coinList: null
         }
     };
 
@@ -18,14 +18,40 @@ class Navbar extends Component {
         axios.get('https://min-api.cryptocompare.com/data/all/coinlist')
         .then( res => {
             console.log('coin list!', res);
+            this.createCoinList(res.data.Data);
         });
     }
 
+    createCoinList = (coins) => {
+        const c = coins;
+        const coinList = [];
+        for(var el in c){
+            const prop = c[el];
+            
+            const coinObj = {
+                id: null,
+                name: null,
+                symbol: null
+            };
+            coinObj.id = prop.Id;
+            coinObj.name = prop.CoinName;
+            coinObj.symbol = prop.Symbol;
+            coinList.push(coinObj);
+            
+        }
+        
+        console.log('this is the coinList parsed', coinList);
+        this.setState({ coinList: coinList});
+    }
     render(){
         return(
             <nav className="coin-nav">
                 {/* <img src="../../assets/images/home.svg" /> */}
-            <SearchBar />
+            {
+                this.state.coinList != null ? 
+                <SearchBar coinList={this.state.coinList}/> :
+                <div>Loading</div>
+            }
             </nav>
         );
     }

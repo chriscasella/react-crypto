@@ -1,3 +1,39 @@
+/* Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+/* Search List */
+.search-list__input {
+  margin: 1vh 14vw 0vh 14vw;
+  width:70vw;
+}
+
+.search-list__item {
+  width: 100%;
+  list-style: none;
+}
+
+.search-list {
+  overflow-x: hidden;
+  max-height: 50vh;
+  background-color: aliceblue;
+}
 /* Coin Stats */
   .coin-nav {
     height: 5vh;

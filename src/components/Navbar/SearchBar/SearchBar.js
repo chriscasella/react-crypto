@@ -30,14 +30,14 @@ class SearchBar extends Component {
         console.log(filteredCoins)
         return(
             <div>
-                <input value={this.state.typedCoin} onChange={this.handleSelect} />
+                <input value={this.state.typedCoin} onChange={this.handleSelect} className="search-list__input"/>
+                <ul className="search-list">
                 {   
-                    <ul>
                     filteredCoins.map( el => {
                         return <SearchItem key={el.id} name={el.name} symbol={el.symbol} />
                     })
-                    </ul>
                 }
+                </ul>
             </div>
         )
     };

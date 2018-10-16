@@ -24,17 +24,19 @@ class SearchBar extends Component {
         const copiedCoins = [...this.state.coinList];
         const filteredCoins = copiedCoins.filter( el => {
             if(this.state.typedCoin.length > 3){
-               return el.name.search(this.state.typedCoin);
+               return el.name.toLowerCase().indexOf(this.state.typedCoin.toLowerCase()) !== -1;
             }
         });
         console.log(filteredCoins)
         return(
             <div>
                 <input value={this.state.typedCoin} onChange={this.handleSelect} />
-                {
+                {   
+                    <ul>
                     filteredCoins.map( el => {
                         return <SearchItem key={el.id} name={el.name} symbol={el.symbol} />
                     })
+                    </ul>
                 }
             </div>
         )

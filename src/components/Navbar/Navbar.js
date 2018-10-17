@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import SearchBar from './SearchBar/SearchBar';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Navbar extends Component {
     constructor(){
@@ -47,8 +48,13 @@ class Navbar extends Component {
     render(){
         return(
             <nav className="coin-nav">
-                {/* <img src="../../assets/images/home.svg" /> */}
-            <NavLink to="/" className="coin-nav__home"> Home </NavLink>
+            <NavLink to="/" className="coin-nav__home">
+            <FontAwesomeIcon
+                icon="home"
+                size="lg"
+                color="#EDF7F6"
+            />
+            </NavLink>
             {
                 this.state.coinList != null ? 
                 <SearchBar coinList={this.state.coinList}/> :

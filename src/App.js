@@ -3,7 +3,12 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './containers/Home/Home';
 import Coin from './containers/Coin/Coin';
 import Navbar from './components/Navbar/Navbar';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+
 import './App.css';
+
+library.add(faHome);
 
 class App extends Component {
   render() {

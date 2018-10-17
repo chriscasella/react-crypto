@@ -111,7 +111,7 @@ class CoinChart extends Component {
             <div>
                 {
                     this.state.series[0].data.length > 0 ? 
-                    <Chart options={this.state.options} series={this.state.series} type="area"  height={320} /> :
+                    <Chart options={this.state.options} series={this.state.series} type="area"  height={320} className="chart-hide" /> :
                     <BounceLoader color="#26A65B" size="16px" margin="4px" /> 
                 }
             </div>

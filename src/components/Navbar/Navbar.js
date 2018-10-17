@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
 import SearchBar from './SearchBar/SearchBar';
 import axios from 'axios';
 
@@ -47,6 +48,7 @@ class Navbar extends Component {
         return(
             <nav className="coin-nav">
                 {/* <img src="../../assets/images/home.svg" /> */}
+            <NavLink to="/" className="coin-nav__home"> Home </NavLink>
             {
                 this.state.coinList != null ? 
                 <SearchBar coinList={this.state.coinList}/> :

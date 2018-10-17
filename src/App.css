@@ -88,6 +88,11 @@ svg {
   }
 
 /* Crypto Container */
+  .crypto-container__main-container {
+    margin: .5vh .5vw;
+    border-radius: 6px;
+    border: 1px solid black;
+  }
   .crypto-list-item__bold-text {
     font-weight: 400;
     font-size: 14px;

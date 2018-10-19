@@ -6,7 +6,8 @@ class SearchBar extends Component {
         super();
         this.state = {
             typedCoin: '',
-            coinList : props.coinList
+            coinList : props.coinList,
+            wipe: false
         };
         console.log('these are props', this.state.coinList)
     };
@@ -29,17 +30,19 @@ class SearchBar extends Component {
         });
 
         const wipeList = () => {
-            this.filteredCoins = null;
+            this.setState({
+                wipe: !this.state.wipe
+            })
         }
-        console.log(filteredCoins)
+        // console.log(filteredCoins)
         return(
             <div>
                 <input value={this.state.typedCoin} onChange={this.handleSelect} className="search-list__input"/>
                 <ul className="search-list">
-                {   
+                {   !this.state.wipe ? 
                     filteredCoins.map( el => {
                         return <SearchItem key={el.id} name={el.name} symbol={el.symbol} callBack={wipeList}/>
-                    })
+                    }) : null
                 }
                 </ul>
             </div>

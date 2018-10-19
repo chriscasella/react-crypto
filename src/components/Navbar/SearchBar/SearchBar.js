@@ -27,6 +27,10 @@ class SearchBar extends Component {
                return el.name.toLowerCase().indexOf(this.state.typedCoin.toLowerCase()) !== -1;
             }
         });
+
+        const wipeList = () => {
+            this.filteredCoins = null;
+        }
         console.log(filteredCoins)
         return(
             <div>
@@ -34,7 +38,7 @@ class SearchBar extends Component {
                 <ul className="search-list">
                 {   
                     filteredCoins.map( el => {
-                        return <SearchItem key={el.id} name={el.name} symbol={el.symbol} />
+                        return <SearchItem key={el.id} name={el.name} symbol={el.symbol} callBack={wipeList}/>
                     })
                 }
                 </ul>

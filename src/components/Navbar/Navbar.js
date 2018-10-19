@@ -23,6 +23,7 @@ class Navbar extends Component {
             this.createCoinList(res.data.Data);
         });
     }
+ 
 
     createCoinList = (coins) => {
         const c = coins;

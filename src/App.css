@@ -25,6 +25,11 @@ svg {
     background: #555; 
 }
 /* Search List */
+.search-list__link {
+  color: #63ADF2;
+  text-decoration: none;
+}
+
 .search-list__input {
   margin: 1vh 3vw 0vh 14vw;
   width:70vw;
@@ -48,6 +53,7 @@ svg {
   width:70vw;
   max-height: 50vh;
   background-color: aliceblue;
+  z-index: 12;
 }
 /* Coin Stats */
   .coin-nav {

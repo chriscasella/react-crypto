@@ -18,7 +18,7 @@ class SearchBar extends Component {
 
     handleSelect = (event) =>{
         const val = event.target.value;
-        this.setState({typedCoin: val});
+        this.setState({typedCoin: val, wipe: false});
     };
 
     render(){
@@ -31,7 +31,7 @@ class SearchBar extends Component {
 
         const wipeList = () => {
             this.setState({
-                wipe: !this.state.wipe
+                wipe: true
             })
         }
         // console.log(filteredCoins)

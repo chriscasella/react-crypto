@@ -156,11 +156,11 @@ svg {
     border: solid 1px black;
     border-radius: 0%;
     padding: 1vh 1vw .5vh 1vw;
-    margin: 1vh 1vw;
+    margin: 1vh 3vw;
     background-color: whitesmoke;
     border-bottom: 7px solid #00487C;
     transition: border .1s, box-shadow .1s;
-    width: 17vw; 
+    width: 93vw; 
   }
   .NewsContainerItem:hover {
     border: solid 1px black;
@@ -190,8 +190,22 @@ svg {
     border-radius: 5px;
   }
 
+@media only screen and (min-width: 1024px){
+   .NewsContainerItem {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    border: solid 1px black;
+    border-radius: 0%;
+    padding: 1vh 1vw .5vh 1vw;
+    margin: 2px 2px;
+    background-color: whitesmoke;
+    border-bottom: 7px solid #00487C;
+    transition: border .1s, box-shadow .1s;
+    width: 17vw; 
+    margin: 8px 24px; 
+  }
+}
 
-//iPad size
+/* //iPad size
 @media only screen and (max-width: 768px){
   .crpyto-container{
     max-height: 80vh;
@@ -241,7 +255,7 @@ svg {
     padding: 5px;
     border-bottom: solid 1px #354F52;
   }
-}
+} */
 
 
 *{

@@ -17,7 +17,9 @@ const NewsContainerItem = (props) => {
                 {a.title}
             </div>
             {
-                a.coins.length > 0 ? <div className="small-text">{coinsMentioned}</div> : null
+                a.coins.length > 0 ? 
+                <div className="small-text">{coinsMentioned}</div> 
+                : null
             }
         </div>
     )

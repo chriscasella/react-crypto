@@ -151,12 +151,10 @@ svg {
     margin: 1vh 1vw;
     background-color: whitesmoke;
     border-bottom: 7px solid #00487C;
+    transition: border .1s, box-shadow .1s; 
   }
   .NewsContainerItem:hover {
     border: solid 1px black;
-    border-radius: 0%;
-    padding: 2vh 2vw;
-    margin: 1vh 1vw;
     box-shadow: none;
   }
   .NewsContainerItem__thumbnail {

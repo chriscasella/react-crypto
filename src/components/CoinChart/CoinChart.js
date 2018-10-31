@@ -66,7 +66,7 @@ class CoinChart extends Component {
     }
 
 
-    //Data Parsing
+    //Data Parsing of API call
     parseData(data){
         console.log('got data', data)
         const dates = [];

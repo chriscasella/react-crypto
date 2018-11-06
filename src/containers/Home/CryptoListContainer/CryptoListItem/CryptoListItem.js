@@ -16,7 +16,7 @@ const CryptoListItem = (props) => {
 
     const percentChangeDiff = num => num > 0 ? "positiveColor" : "negativeColor" ;
     return(
-        <tr>
+        <tr className="crypto-list-item">
             <td>{coin.cmc_rank}</td>
             
             <td className="crypto-list-item__link"><Link to={"/" + coin.symbol} style={{textDecoration: 'none'}}>{coin.name}</Link></td>

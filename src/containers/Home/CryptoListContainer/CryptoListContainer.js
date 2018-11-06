@@ -43,7 +43,7 @@ class CryptoListContainer extends Component {
             <div className="crypto-container__main-container">
             <table className="crpyto-container">
                 <thead>
-                    <tr>
+                    <tr className="crypto-container__top-row">
                         <th>
                             Rank
                         </th>

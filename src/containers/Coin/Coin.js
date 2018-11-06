@@ -12,6 +12,7 @@ class Coin extends Component {
             dataLoaded: false,
             coinSymbol: null
         }
+        console.log('look for path!', props)
     }
 
     getCoinData = () => {

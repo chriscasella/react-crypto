@@ -8,8 +8,10 @@ const CoinStats = (props) => {
     //Dynamic styling for percent changes
     const prChngDiff = num => num > 0 ? "positiveColor coinstats__row-item" : "negativeColor coinstats__row-item" ;
     const normalizeNum = (x) => {
-        x = x.toFixed(2);
-     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        if(x != null){
+            x = x.toFixed(2);
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } 
     }
     const calcSupply = (supply, total) => supply/total;
     return(

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NewsContainerItem from './NewsContainerItem/NewsContainerItem';
+import MediaQuery from 'react-responsive';
 
 
 class NewsContainer extends Component {
@@ -32,7 +33,12 @@ class NewsContainer extends Component {
 
         return(
             <div>
-                {newsData}
+            <MediaQuery minDeviceWidth={1024}>
+                <span className="NewsContainer-main-container--desktop">{newsData}</span>
+            </MediaQuery>
+            <MediaQuery maxDeviceWidth={1024}>
+                <span className="NewsContainer-main-container">{newsData}</span>
+            </MediaQuery>
             </div>
         )
     }

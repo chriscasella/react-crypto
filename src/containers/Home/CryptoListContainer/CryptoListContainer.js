@@ -40,6 +40,7 @@ class CryptoListContainer extends Component {
         );
         
         return(
+            <div className="crypto-container__main-container">
             <table className="crpyto-container">
                 <thead>
                     <tr>
@@ -72,6 +73,7 @@ class CryptoListContainer extends Component {
                 {cryptoListData}
                 </tbody>
             </table>
+            </div>
         );
     };
 };

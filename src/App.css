@@ -33,6 +33,16 @@ svg {
 .search-list__input {
   margin: 1vh 3vw 0vh 14vw;
   width:70vw;
+  background-color: #5c667d;
+  border: none;
+  transition: border .5s;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.search-list__input:hover {
+  border-bottom: 1px solid #68b6ff;
+  /* border-bottom: 1px solid whitesmoke; */
 }
 
 .search-list__item:hover {

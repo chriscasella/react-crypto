@@ -24,14 +24,15 @@ class SearchBar extends Component {
     render(){
         const copiedCoins = [...this.state.coinList];
         const filteredCoins = copiedCoins.filter( el => {
-            if(this.state.typedCoin.length > 3){
+            if(this.state.typedCoin.length > 2){
                return el.name.toLowerCase().indexOf(this.state.typedCoin.toLowerCase()) !== -1;
             }
         });
 
         const wipeList = () => {
             this.setState({
-                wipe: true
+                wipe: true,
+                typedCoin: ''
             })
         }
         // console.log(filteredCoins)

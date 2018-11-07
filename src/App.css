@@ -115,7 +115,7 @@ svg {
   }
 
   .crypto-list-item {
-    height: 3vh;
+    height: 10vh;
     border: 1px solid #cfd1d48f;
     transition: box-shadow .5s;
   }

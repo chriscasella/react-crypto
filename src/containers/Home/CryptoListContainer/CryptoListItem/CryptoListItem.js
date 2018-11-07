@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import axios from 'axios';
+import SparklineChart from '../../../../components/SparklineChart/SparklineChart';
 import { BrowserRouter as Router, Route, Link  } from 'react-router-dom';
+import { BounceLoader } from 'halogenium';
 
 class CryptoListItem extends Component {
     constructor(props){
         super();
         this.state = {
-            coinData: props.coinData
+            coinData: props.coinData,
+            sparklineData: null
         }
     }
 
     getSparklineData = () => {
         axios.get('https://min-api.cryptocompare.com/data/histoday?fsym=' + this.state.coinData.symbol + '&tsym=USD&limit=10')
         .then( res =>{
-            console.log('spark data', res.data)
+            console.log('spark data', res.data.Data);
+            this.setState({
+                sparklineData: res.data.Data
+            })
         })
     }
 
@@ -44,7 +50,14 @@ class CryptoListItem extends Component {
                     {coin.name}
                     </Link></td>
                 <td className="crypto-list-item__bold-text">{coin.symbol}</td>
-            
+                <td>
+                {
+                    this.state.sparklineData != null ? 
+                    <SparklineChart sparklineData={this.state.sparklineData} />:
+                    <BounceLoader color="#26A65B" size="16px" margin="4px" /> 
+
+                }
+                </td>
                 <td>$ {roundDown(coin.quote.USD.price)}</td>
                 {/* Desktop Stats */}
                 <MediaQuery minDeviceWidth={1024}>

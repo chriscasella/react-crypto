@@ -87,7 +87,6 @@ class CoinChart extends Component {
         const series = [...this.state.series];
         const options = {
             ...this.state.options
-
         }
         series[0].name = 'Close';
         //spread operator for array of el.close data

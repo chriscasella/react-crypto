@@ -20,7 +20,7 @@ class CryptoListContainer extends Component {
     getMarketData = () =>{
     axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=100&convert=USD&CMC_PRO_API_KEY=' + process.env.REACT_APP_API)
         .then( res => {
-            const marketData = res.data.data;
+            const marketData = res.data.data.splice(0, 25);
             this.setState({marketData: marketData});
             console.log(this.state)
         })

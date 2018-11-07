@@ -22,7 +22,7 @@ class CryptoListContainer extends Component {
         .then( res => {
             const marketData = res.data.data.splice(0, 25);
             this.setState({marketData: marketData});
-            console.log(this.state)
+            console.log(this.state);
         })
     };
 

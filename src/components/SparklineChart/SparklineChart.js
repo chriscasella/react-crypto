@@ -62,7 +62,7 @@ class SparklineChart extends Component {
     render(){
         return(
 
-            <Chart options={this.state.options} series={this.state.series} type="area" height="50%" width="100%"/>
+            <Chart options={this.state.options} series={this.state.series} type="area" height="50%" />
 
         )
     }

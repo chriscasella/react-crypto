@@ -110,9 +110,9 @@ svg {
     transition: box-shadow 1s; 
   }
 
-  .crypto-container__main-container:hover{
+  /* .crypto-container__main-container:hover{
     box-shadow: 0px 0px 3px 0px rgba(158,158,158,1);
-  }
+  } */
 
   .crypto-list-item {
     height: 10vh;
@@ -158,9 +158,13 @@ svg {
   .crpyto-container {
     border-collapse: collapse;
     width: 100%;
-    border-radius: 2px;  
+    border-radius: 2px;
+    transition: box-shadow 1s;   
   }
 
+  .crypto-container:hover{
+    box-shadow: 0px 0px 3px 0px rgba(158,158,158,1);
+  }
 
 
   
@@ -175,7 +179,28 @@ svg {
     padding: 5px;
     border-bottom: solid 1px #354F52;
   }
+  .crypto-container__pagination-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    margin-top: 1vh;
+  }
+  .crypto-container__pagination-button {
+    text-align: center;
+    cursor: default;
+    padding-top: 2%;
+    width: 9vw;
+    height: 5vh;
+    /* box-shadow: 0px 0px .3px 0px rgba(107,107,107,1); */
+    transition: box-shadow .2s;
+  }
 
+  .crypto-container__pagination-button:hover{
+    box-shadow: 0px 0px 1px 0px rgba(107,107,107,1);
+  }
+  .crypto-container__pagination-button:active {
+    box-shadow: inset 0px 1px 5px -2px rgba(0,0,0,0.75);
+  }
   /* tr:nth-child(even) {
     background: #3e66808c;
   } */

@@ -22,20 +22,29 @@ class CryptoListContainer extends Component {
     axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=100&convert=USD&CMC_PRO_API_KEY=' + process.env.REACT_APP_API)
         .then( res => {
             const marketData = res.data.data;
-            this.setState({marketData: marketData, activeMarketData: marketData.splice(0, 5)});
+            const activeMarketData = [...marketData].slice(0, 5);
+            this.setState({marketData: marketData, activeMarketData: activeMarketData});
             console.log(this.state);
         })
+    };
+
+    cryptoListData = () => { 
+        const cryptoList = this.state.activeMarketData.map( ele => (
+                <CryptoListItem className="" coinData={ele} key={ele.id} />
+            )
+        )
+        return cryptoList;
     };
 
     paginationButtons = () =>{
             let buttons = [];
             //100 objects in the array
             let i =0;
-            while(i < 10){
+            while(i < 20){
                 i++
-                console.log(true)
+                let boundButton = this.setActivePage.bind(this, i);
                 buttons.push(
-                    <div className="crypto-container__pagination-button">{i}</div>
+                    <div className="crypto-container__pagination-button" key={i} onClick={boundButton}>{i}</div>
                 )
                 
         }
@@ -43,19 +52,20 @@ class CryptoListContainer extends Component {
 
     }
 
+    setActivePage = (pageNum, event) => {
+        console.log('pagenum!', pageNum, event)
+        const copyMarketData = [...this.state.marketData]
+        const newCoins = copyMarketData.slice((pageNum*5), 5)
+        this.setState({
+            activeMarketData: newCoins
+        })
+    }
+
     componentWillMount(){
         this.getMarketData();
     };
 
     render(){
-
-        let cryptoListData = this.state.activeMarketData.map( ele => (
-
-                <CryptoListItem className="" coinData={ele} key={ele.id} />
-  
-            )
-        );
-
         return(
             <div className="crypto-container__main-container">
                 <table className="crpyto-container">
@@ -90,7 +100,7 @@ class CryptoListContainer extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {cryptoListData}
+                    {this.cryptoListData()}
                     </tbody>
                 </table>
                 <div className="crypto-container__pagination-container">

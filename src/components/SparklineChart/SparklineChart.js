@@ -19,7 +19,7 @@ class SparklineChart extends Component {
                     curve: 'straight'
                 },
                 fill: {
-                    opacity: 0.3,
+                    opacity: 0.8,
                     gradient: {
                     enabled: false
                     }
@@ -36,7 +36,20 @@ class SparklineChart extends Component {
                 }, 
                 markers: {
                     size: 0
-                },  
+                }, 
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 200,
+                    animateGradually: {
+                        enabled: true,
+                        delay: 150
+                    },
+                    dynamicAnimation: {
+                        enabled: true,
+                        speed: 350
+                    }
+                }  
             },
             series: [{
                 name: 'Close',
@@ -49,7 +62,7 @@ class SparklineChart extends Component {
     render(){
         return(
 
-            <Chart options={this.state.options} series={this.state.series} type="line" width="50%"/>
+            <Chart options={this.state.options} series={this.state.series} type="area" height="50%" width="100%"/>
 
         )
     }

@@ -50,7 +50,7 @@ class CryptoListItem extends Component {
                     {coin.name}
                     </Link></td>
                 <td className="crypto-list-item__bold-text">{coin.symbol}</td>
-                <td>
+                <td className="crypto-list-item--chart">
                 {
                     this.state.sparklineData != null ? 
                     <SparklineChart sparklineData={this.state.sparklineData} />:

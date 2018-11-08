@@ -119,7 +119,11 @@ svg {
     border: 1px solid #cfd1d48f;
     transition: box-shadow .5s;
   }
-
+  .crypto-list-item--chart {
+    display: flex;
+    justify-content: center;
+  }
+  
   a {color:#63ADF2;}      /* unvisited link */
   a:visited {color:#63ADF2;}  /* visited link */
   a:hover {color:#545E75;}  /* mouse over link */

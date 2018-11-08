@@ -54,6 +54,9 @@ class CryptoListContainer extends Component {
                             Symbol
                         </th>
                         <th>
+                            Recent Performance
+                        </th>
+                        <th>
                             Price
                         </th>
                         <MediaQuery minDeviceWidth={1024}>

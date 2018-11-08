@@ -33,7 +33,10 @@ class SparklineChart extends Component {
                     x: {
                         format: 'MM/dd/yy'
                     }
-                }  
+                }, 
+                markers: {
+                    size: 0
+                },  
             },
             series: [{
                 name: 'Close',
@@ -46,7 +49,7 @@ class SparklineChart extends Component {
     render(){
         return(
 
-            <Chart options={this.state.options} series={this.state.series} type="line" height="100%" width="100%"/>
+            <Chart options={this.state.options} series={this.state.series} type="line" width="50%"/>
 
         )
     }

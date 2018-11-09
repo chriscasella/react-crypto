@@ -46,7 +46,6 @@ class CryptoListContainer extends Component {
                 buttons.push(
                     <div className="crypto-container__pagination-button" key={i} onClick={boundButton}>{i}</div>
                 )
-                
         }
         return buttons;
 
@@ -55,10 +54,12 @@ class CryptoListContainer extends Component {
     setActivePage = (pageNum, event) => {
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]
-        const newCoins = copyMarketData.slice((pageNum*5), 5)
+        const p = pageNum*5;
+        const newCoins = copyMarketData.slice(p, p+5 )
         this.setState({
             activeMarketData: newCoins
-        })
+        });
+        console.log('this is state after update', this.state)
     }
 
     componentWillMount(){

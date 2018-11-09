@@ -63,7 +63,7 @@ class SparklineChart extends Component {
                 data: props.sparklineData.map( x => x.close )
             }]
         }
-    console.log(this.state.series)
+    // console.log(this.state.series)
     }
 
     componentDidMount(){
@@ -89,7 +89,7 @@ class SparklineChart extends Component {
                 options: chart
             }) 
         }
-        console.log('STATASTATATATAT',max, min)
+        // console.log('STATASTATATATAT',max, min)
     }
 
     render(){

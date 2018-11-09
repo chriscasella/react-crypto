@@ -97,7 +97,7 @@ class CoinChart extends Component {
         options.xaxis.categories = [...dates];
         // console.log(series, categories)
         this.setState({ series, options});
-        console.log(this.state)
+        // console.log(this.state)
     };
 
     //LifeCycle Hooks

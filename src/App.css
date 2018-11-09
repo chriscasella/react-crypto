@@ -188,9 +188,10 @@ svg {
   .crypto-container__pagination-button {
     text-align: center;
     cursor: default;
-    padding-top: 2%;
+    /* padding-top: 2%; */
     width: 9vw;
     height: 5vh;
+    line-height: 5vh;
     /* box-shadow: 0px 0px .3px 0px rgba(107,107,107,1); */
     transition: box-shadow .2s;
   }

@@ -33,7 +33,7 @@ class SparklineChart extends Component {
                 },
                 tooltip: {
                     enabled:true,
-                    followCursor: false,
+                    followCursor: true,
                     onDatasetHover: {
                         highlightDataSeries: false,
                     },

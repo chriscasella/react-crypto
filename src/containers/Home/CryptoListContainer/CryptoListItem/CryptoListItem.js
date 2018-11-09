@@ -54,7 +54,7 @@ class CryptoListItem extends Component {
                 {
                     this.state.sparklineData != null ? 
                     <SparklineChart sparklineData={this.state.sparklineData} />:
-                    <BounceLoader color="#26A65B" size="16px" margin="4px" /> 
+                    <BounceLoader color="#26A65B" size="16px" margin="auto" /> 
 
                 }
                 </td>

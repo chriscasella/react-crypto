@@ -54,8 +54,8 @@ class CryptoListContainer extends Component {
     setActivePage = (pageNum, event) => {
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]
-        const p = pageNum*5;
-        const newCoins = copyMarketData.slice(p, p+5 )
+        const p = (pageNum - 1) * 5;
+        const newCoins = copyMarketData.slice(p, p + 5)
         this.setState({
             activeMarketData: newCoins
         });

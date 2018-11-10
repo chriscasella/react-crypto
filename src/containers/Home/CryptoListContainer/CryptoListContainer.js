@@ -17,7 +17,7 @@ class CryptoListContainer extends Component {
         this.getMarketData = this.getMarketData.bind(this);  
         console.log(this.state);
     }
-
+    //parses API response
     getMarketData = () =>{
     axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=100&convert=USD&CMC_PRO_API_KEY=' + process.env.REACT_APP_API)
         .then( res => {
@@ -27,7 +27,7 @@ class CryptoListContainer extends Component {
             console.log(this.state);
         })
     };
-
+    //maps table items for JSX
     cryptoListData = () => { 
         const cryptoList = this.state.activeMarketData.map( ele => (
                 <CryptoListItem className="" coinData={ele} key={ele.id} />
@@ -35,7 +35,7 @@ class CryptoListContainer extends Component {
         )
         return cryptoList;
     };
-
+    //sets JSX of buttons for pagination
     paginationButtons = () =>{
             let buttons = [];
             //100 objects in the array
@@ -50,7 +50,7 @@ class CryptoListContainer extends Component {
         return buttons;
 
     }
-
+    //sets the array for the mapped items in table
     setActivePage = (pageNum, event) => {
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]

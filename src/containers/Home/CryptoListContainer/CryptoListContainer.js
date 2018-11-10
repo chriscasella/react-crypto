@@ -12,7 +12,8 @@ class CryptoListContainer extends Component {
         this.state = {
             marketData : [],
             activeMarketData: [],
-            showData: false
+            showData: false,
+            paginationMarker: 1
         }
         this.getMarketData = this.getMarketData.bind(this);  
         console.log(this.state);
@@ -37,27 +38,34 @@ class CryptoListContainer extends Component {
     };
     //sets JSX of buttons for pagination
     paginationButtons = () =>{
+            let s = {...this.state};
+            let pageNum = s.paginationMarker - 2;
             let buttons = [];
             //100 objects in the array
-            let i =0;
-            while(i < 20){
+            let i = 0;
+            console.log('pagey',pageNum)
+            pageNum < 0 ? pageNum = 0 : null;
+            pageNum >= 15 ? pageNum = 15 : null;
+            while(i < 5){
                 i++
-                let boundButton = this.setActivePage.bind(this, i);
+                pageNum++
+                let boundButton = this.setActivePage.bind(this, pageNum);
                 buttons.push(
-                    <div className="crypto-container__pagination-button" key={i} onClick={boundButton}>{i}</div>
+                    <div className="crypto-container__pagination-button" key={pageNum} onClick={boundButton}>{pageNum}</div>
                 )
         }
         return buttons;
 
     }
-    //sets the array for the mapped items in table
+    //sets the array for the mapped items in table and for pagination numbers
     setActivePage = (pageNum, event) => {
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]
         const p = (pageNum - 1) * 5;
         const newCoins = copyMarketData.slice(p, p + 5)
         this.setState({
-            activeMarketData: newCoins
+            activeMarketData: newCoins,
+            paginationMarker: pageNum
         });
         console.log('this is state after update', this.state)
     }

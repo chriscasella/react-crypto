@@ -4,11 +4,11 @@ import Home from './containers/Home/Home';
 import Coin from './containers/Coin/Coin';
 import Navbar from './components/Navbar/Navbar';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faAngleleft } from '@fortawesome/free-solid-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 
-library.add(faHome);
+library.add(fas);
 
 class App extends Component {
   render() {

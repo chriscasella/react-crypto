@@ -28,6 +28,10 @@ class CoinChart extends Component {
                 tooltip: {
                     x: {
                         format: 'MM/dd/yy HH:mms'
+                    },
+                    followCursor: true,
+                    onDatasetHover: {
+                        highlightDataSeries: false,
                     }
                 },
                 annotations : {

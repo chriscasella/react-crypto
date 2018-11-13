@@ -4,6 +4,7 @@ import axios from 'axios';
 import './CryptoListContainer.css';
 import MediaQuery from 'react-responsive';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class CryptoListContainer extends Component {
 
@@ -39,11 +40,13 @@ class CryptoListContainer extends Component {
     //sets JSX of buttons for pagination
     paginationButtons = () =>{
             let s = {...this.state};
+            /*adjust page number so allows for previous numbers before pagenumber
+                if left as is, there is no way to traverse backwards
+            */
             let pageNum = s.paginationMarker - 2;
             let buttons = [];
-            //100 objects in the array
             let i = 0;
-            console.log('pagey',pageNum)
+            //
             pageNum < 0 ? pageNum = 0 : null;
             pageNum >= 15 ? pageNum = 15 : null;
             while(i < 5){
@@ -54,6 +57,22 @@ class CryptoListContainer extends Component {
                     <div className="crypto-container__pagination-button" key={pageNum} onClick={boundButton}>{pageNum}</div>
                 )
         }
+        // let prevPage;
+        // let nextPage;
+        // let first = 1, last = 20;
+        // if (pageNum <= 5 || pageNum >= 18){
+            
+
+        // } 
+        //  prevPage = pageNum - 1;
+    //  <FontAwesomeIcon
+    //             icon="angleLeft"
+    //             size="lg"
+    //             color="#EDF7F6"
+    //         />
+    //     buttons.unshift(<div className="crypto-container__pagination-button" key={pageNum}>
+    //    Left
+    //     </div>)
         return buttons;
 
     }

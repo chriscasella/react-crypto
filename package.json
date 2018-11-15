@@ -11,6 +11,7 @@
     "halogen": "^0.2.0",
     "halogenium": "^2.2.3",
     "moment": "^2.22.2",
+    "npm": "^6.4.1",
     "react": "^16.5.2",
     "react-apexcharts": "^1.0.9",
     "react-dom": "^16.5.2",

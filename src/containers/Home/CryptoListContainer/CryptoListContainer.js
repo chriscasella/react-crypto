@@ -66,7 +66,7 @@ class CryptoListContainer extends Component {
             
 
         } 
-        
+        nextPage = s.paginationMarker + 1;
         prevPage = s.paginationMarker - 1;
         const boundPrev = this.setActivePage.bind(this, prevPage)
         buttons.unshift(<div className="crypto-container__pagination-button" onClick={boundPrev} key={prevPage}>
@@ -83,7 +83,18 @@ class CryptoListContainer extends Component {
                                         size="lg"
                                         color="grey"
                                     />
-                        </div>)               
+                        </div>);
+        const boundNextPage = this.setActivePage.bind(this, nextPage)
+        buttons.push(<div className="crypto-container__pagination-button" onClick={boundNextPage} key={next
+        
+        
+        Page}>
+                        <FontAwesomeIcon
+                                    icon="angle-right"
+                                    size="lg"
+                                    color="grey"
+                                />
+                    </div>)     
         return buttons;
 
     }

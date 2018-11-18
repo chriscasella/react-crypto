@@ -15,7 +15,8 @@ class CryptoListContainer extends Component {
             activeMarketData: [],
             showData: false,
             paginationMarker: 1,
-            wipeButtons: false
+            wipeButtons: false,
+            showPagination: true
         }
         this.getMarketData = this.getMarketData.bind(this);  
         console.log(this.state);
@@ -99,15 +100,22 @@ class CryptoListContainer extends Component {
 
     // }
     //sets the array for the mapped items in table and for pagination numbers
+    wipePagination = () => {
+        this.setState({
+            showPagination: false
+        });
+    }
+
     setActivePage = (pageNum, event) => {
+        this.wipePagination();
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]
         const p = (pageNum - 1) * 5;
         const newCoins = copyMarketData.slice(p, p + 5)
         this.setState({
             activeMarketData: newCoins,
-            paginationMarker: pageNum
-           
+            paginationMarker: pageNum,
+            showPagination: true
         });
     }
 
@@ -154,11 +162,15 @@ class CryptoListContainer extends Component {
                     </tbody>
                 </table>
                 <div className="crypto-container__pagination-container">
-                <CryptoListPagination 
-                    paginationMarker={this.state.paginationMarker}
-                    setActivePage={this.setActivePage}
-                    
-                />
+                {
+                    this.state.showPagination ? 
+                    <CryptoListPagination 
+                        paginationMarker={this.state.paginationMarker}
+                        setActivePage={this.setActivePage}
+                    /> 
+                    : null
+
+                }
                 </div>
             </div>
         );

@@ -25,7 +25,7 @@ const CryptoListPagination = (props) => {
     let firstPage = 1;
     let prevPage;
     let nextPage;
-    let first = 1, last = 20;
+    let lastPage = 20;
     if (pageNum <= 5 || pageNum >= 18){
         
 
@@ -56,7 +56,14 @@ const CryptoListPagination = (props) => {
                                 color="grey"
                             />
                 </div>)
-
+    const boundLastPage = props.setActivePage.bind(this, lastPage)
+    buttons.push(<div className="crypto-container__pagination-button" onClick={boundLastPage} >
+                    <FontAwesomeIcon
+                                icon="angle-double-right"
+                                size="lg"
+                                color="grey"
+                            />
+                </div>)
     return(
         buttons
     )

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CryptoListPagination = (props) => {
     // let s = {...this.state};]
-    console.log('buttons for pagination', buttons)
     let s = props;
     /*adjust page number so allows for previous numbers before pagenumber
         if left as is, there is no way to traverse backwards

@@ -15,8 +15,7 @@ class CryptoListContainer extends Component {
             activeMarketData: [],
             showData: false,
             paginationMarker: 1,
-            wipeButtons: false,
-            showPagination: true
+            wipeButtons: false
         }
         this.getMarketData = this.getMarketData.bind(this);  
         console.log(this.state);
@@ -39,83 +38,15 @@ class CryptoListContainer extends Component {
         )
         return cryptoList;
     };
-    //sets JSX of buttons for pagination
-    // paginationButtons = () =>{
-    //     let s = {...this.state};
-    //     /*adjust page number so allows for previous numbers before pagenumber
-    //         if left as is, there is no way to traverse backwards
-    //     */
-    //     let pageNum = s.paginationMarker - 2;
-    //     let buttons = [];
-    //     let i = 0;
-    //     //outer bounds of index, to stop paginating nonexistant pages
-    //     pageNum < 0 ? pageNum = 0 : null;
-    //     pageNum >= 15 ? pageNum = 15 : null;
-    //     while(i < 5){
-    //         i++
-    //         pageNum++
-    //         let boundButton = this.setActivePage.bind(this, pageNum);
-    //         buttons.push(
-    //             <div className="crypto-container__pagination-button" key={pageNum} onClick={boundButton}>{pageNum}</div>
-    //         )
-    //     }
-    //     let firstPage = 1;
-    //     let prevPage;
-    //     let nextPage;
-    //     let first = 1, last = 20;
-    //     if (pageNum <= 5 || pageNum >= 18){
-            
-
-    //     } 
-    //     nextPage = s.paginationMarker + 1;
-    //     prevPage = s.paginationMarker - 1;
-    //     const boundPrev = this.setActivePage.bind(this, prevPage)
-    //     buttons.unshift(<div className="crypto-container__pagination-button" onClick={boundPrev} key={prevPage}>
-    //                         <FontAwesomeIcon
-    //                                     icon="angle-left"
-    //                                     size="lg"
-    //                                     color="grey"
-    //                                 />
-    //                     </div>)
-    //     const boundFirstPage = this.setActivePage.bind(this, firstPage)
-    //     buttons.unshift(<div className="crypto-container__pagination-button" onClick={boundFirstPage} key={firstPage}>
-    //                         <FontAwesomeIcon
-    //                                     icon="angle-double-left"
-    //                                     size="lg"
-    //                                     color="grey"
-    //                                 />
-    //                     </div>);
-    //     const boundNextPage = this.setActivePage.bind(this, nextPage)
-    //     buttons.push(<div className="crypto-container__pagination-button" onClick={boundNextPage} key={next
-        
-        
-    //     Page}>
-    //                     <FontAwesomeIcon
-    //                                 icon="angle-right"
-    //                                 size="lg"
-    //                                 color="grey"
-    //                             />
-    //                 </div>)     
-    //     return buttons;
-
-    // }
-    //sets the array for the mapped items in table and for pagination numbers
-    wipePagination = () => {
-        this.setState({
-            showPagination: false
-        });
-    }
-
+    
     setActivePage = (pageNum, event) => {
-        this.wipePagination();
         console.log('pagenum!', pageNum, event)
         const copyMarketData = [...this.state.marketData]
         const p = (pageNum - 1) * 5;
         const newCoins = copyMarketData.slice(p, p + 5)
         this.setState({
             activeMarketData: newCoins,
-            paginationMarker: pageNum,
-            showPagination: true
+            paginationMarker: pageNum
         });
     }
 
@@ -162,15 +93,10 @@ class CryptoListContainer extends Component {
                     </tbody>
                 </table>
                 <div className="crypto-container__pagination-container">
-                {
-                    this.state.showPagination ? 
-                    <CryptoListPagination 
-                        paginationMarker={this.state.paginationMarker}
-                        setActivePage={this.setActivePage}
-                    /> 
-                    : null
-
-                }
+                <CryptoListPagination 
+                    paginationMarker={this.state.paginationMarker}
+                    setActivePage={this.setActivePage}
+                /> 
                 </div>
             </div>
         );
